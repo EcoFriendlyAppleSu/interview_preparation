@@ -21,3 +21,21 @@ DP는 어떤 방식을 통해 문제를 해결하나요?
 
 </div>
 </details>
+
+<details>
+<summary style="font-size:20px">DFS, BFS</summary>
+<div markdown="1">
+<br/>
+<h3>그래프 탐색 알고리즘인 DFS와 BFS</h3>
+
+🍎 DFS
+
+- 여러가지 드라마가 존재했을 때, 한 가지 전부 시청하는 방법
+
+🍎 BFS
+
+- 여러가지 드라마를 돌아가며 시청하는 방법
+
+🍏 경로 탐색, Network 유형, 조합 유형이 나올 때, DFS 혹은 BFS를 사용해 해결하는 것이 좋습니다.
+</div>
+</details>
