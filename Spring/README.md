@@ -77,3 +77,19 @@
 
 </div>
 </details>
+
+<details>
+<summary style="font-size:20px">@WebMvcTest</summary>
+<div markdown="1">
+<br/>
+<h3>WebMvcTest란</h3>
+
+- '@WebMvcTest'는 스프링 MVC Controller의 단위 테스트를 위해 사용됩니다. 이 Annotation을 사용하면 Web 계층에 집중된 테스트를 수행할 수 있습니다.
+
+- '@WebMvcTest'는 Controller의 동작을 테스트하고, Controller와 관련된 Bean들만 로드됩니다. 따라서, Controller의 요청 처리, 응답 상태 코드, View와 Model의 검증 등과 같은 Web 계층에 특화된 테스트를 작성할 수 있습니다.
+
+<h3>❓ WebMvcTest를 사용해서 얻을 수 있는 이점이 있나요?</h3>
+
+- Presentation 계층에서의 테스트를 위해 필요한 최소한의 구성 요소만 로드되어 테스트 시간이 짧고 외부 의존성이 없으므로 테스트 범위가 좁아집니다.
+</div>
+</details>
