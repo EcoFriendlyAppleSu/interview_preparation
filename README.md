@@ -25,6 +25,8 @@
 <details>
 <summary style="font-size:20px">제목</summary>
 <div markdown="1">
+<br/>
+<h2>🤔 질의</h2>
 내용
 </div>
 </details>
