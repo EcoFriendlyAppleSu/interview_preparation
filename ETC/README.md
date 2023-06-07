@@ -42,3 +42,46 @@
 
 </div>
 </details>
+
+<details>
+<summary style="font-size:20px">Test Redis 환경 구축</summary>
+<div markdown="1">
+<br/>
+<h2>🤔 Redis Container vs Embedded Redis</h2>
+
+📚 Redis Container vs Embedded Redis 두 환경은 같은 Redis를 사용하지만 다르게 동작합니다. 각각의 장단점을 알아봅시다.
+
+<h3>🍎 Redis Container의 장단점</h3>>
+
+- Container Redis는 독립된 Redis 서버를 Container 형태로 실행합니다. 주로 Docker를 사용합니다.
+
+<h4>✓ 장점</h4>
+
+- 외부 Redis 서버와 동일한 기능과 구성 옵션을 제공합니다. 테슽 환경에서 실제 운영 환경과 동일한 Redis 서버를 사용할 수 있습니다.
+
+- 복잡한 환경이나 다른 시스템과의 통합 테스트를 보다 유연하게 처리할 수 있습니다.
+
+<h4>✓ 단점</h4>
+
+- Redis Container를 실행하고 관리해야 하므로, Test 환경을 구성하는데 추가적인 작업이 필요합니다. Container를 띄우는데 시간이 Embedded Redis 실행 환경 보다 오래 소요됩니다.
+
+- 테스트 실행 시간이 조금 느릴 수 있습니다. Redis 서버에 네트워크 호출이 필요하기 때문에 약간의 성능 오버헤드가 발생할 수 있습니다.
+
+
+<h3>🍎 Embedded Redis의 장단점</h3>>
+
+- Embedded Redis는 애플리케이션에 내장되어 있는 Redis 서버입니다.
+
+<h4>✓ 장점</h4>
+
+- 테스트 환경을 구성하는 데 간편하고 빠릅니다. Redis 서버를 별도로 구성할 필요가 없습니다.
+
+<h4>✓ 단점</h4>
+
+- 애플리케이션과 함께 실행되므로, 애플리케이션의 메모리 사용량이 증가할 수 있습니다.
+
+<h3>🤔 그렇다면 어떤 Redis 서버 환경을 사용하면 될까요?</h3>>
+
+- 프로젝트마다 구성 방식은 다르지만 간단한 테스트 환경을 구성하고 빠른 실행 시간을 원한다면 Embedded Redis를 사용하는 것이 좋고 실제 운영 환경과 가까운 테스트 환경이 필요하거나 복잡한 시나리오를 테스트해야 한다면 Container Redis를 사용하는 것이 더 적합합니다.
+</div>
+</details>
