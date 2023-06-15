@@ -26,8 +26,15 @@
 <summary style="font-size:20px">제목</summary>
 <div markdown="1">
 <br/>
-<h2>🤔 질의</h2>
-내용
+<h2>🤔 질의?</h2>
+
+<h3>📝 나의 대답</h3>
+
+- 
+
+<h3>GPT의 대답</h3>
+
+- 
 </div>
 </details>
 ```
