@@ -544,3 +544,36 @@
 
 </div>
 </details>
+
+<details>
+<summary style="font-size:20px">interceptor, filter</summary>
+<div markdown="1">
+<br/>
+<h2>🤔 Spring 에서 Interceptor와 Servlet Filter에 대해 설명해 주세요.</h2>
+
+<h3>📝 나의 대답</h3>
+
+- Interceptor는 Spring framework에서 제공하는 Library이며 filter는 servlet에서 제공하는 Library입니다. interface는 요청을 dispatcher servlet이 받은 뒤에 저리하며 filter는 요청이 dispatcher에 전에 처리하는 역할을 맡습니다.
+
+<h3>GPT의 대답</h3>
+
+- Interceptor는 Spring Framework에서 제공하는 기능으로, Dispatcher Servlet이 요청을 처리하기 전후로 수행되는 역할을 담당합니다. Interceptor는 주로 전역적인 작업이나 공통된 로직을 처리하기 위해 사용됩니다. 예를 들어, 요청의 인증, 권한 검사, 로깅, 예외 처리 등과 같은 공통된 작업을 Interceptor를 통해 처리할 수 있습니다. Interceptor는 HandlerInterceptor 인터페이스를 구현하여 정의하며, preHandle, postHandle, afterCompletion 등의 메서드를 제공하여 요청 처리 전후에 필요한 작업을 수행할 수 있습니다.
+
+- Servlet Filter는 Java Servlet 스펙에서 제공하는 기능으로, 요청이 서블릿으로 전달되기 전후에 수행되는 역할을 담당합니다. Servlet Filter는 주로 HTTP 요청 및 응답의 전처리 및 후처리 작업을 처리하기 위해 사용됩니다. 예를 들어, 요청/응답 인코딩, XSS 방지, 세션 관리, 캐싱 등과 같은 작업을 Filter를 통해 처리할 수 있습니다. Servlet Filter는 javax.servlet.Filter 인터페이스를 구현하여 정의하며, doFilter 메서드를 통해 요청과 응답에 대한 필터링 작업을 수행합니다.
+
+<br/>
+<h2>🤔 설명만 들어보면 인터셉터만 쓰는게 나아보이는데, 아닌가요? 필터는 어떤 상황에 사용 해야 하나요.</h2>
+
+<h3>📝 나의 대답</h3>
+
+- Filter가 반드시 필요할 때가 존재합니다. interceptor를 사용하게 된다면 매 요청 전처리마다 인코딩 혹은 디코딩 과정이 포함되어 있는데 이 것은 dispatcher servlet 전에 존재하는 filter에게 역할을 맡기게 된다면 공통으로 처리할 수 있게되어 리소스가 절약됩니다.
+
+<h3>GPT의 대답</h3>
+
+- Interceptor는 Spring Framework와 함께 사용되며, Spring의 빈과 통합되어 동작합니다. Filter는 Java Servlet 스펙에 따라 동작하므로, 어떠한 웹 프레임워크에서도 사용할 수 있습니다.
+
+- Filter는 주로 HTTP 요청 및 응답에 대한 전처리 및 후처리 작업을 처리하기 위해 사용하며, 여러 서블릿에서 공통으로 수행해야 할 작업에 적합합니다.
+
+- Interceptor는 Spring Framework와 함께 사용되며, 전역적인 작업이나 공통된 로직을 처리하기 위해 사용되며, Spring의 빈과 통합되어 동작합니다.
+</div>
+</details>
