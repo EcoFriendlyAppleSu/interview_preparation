@@ -575,5 +575,49 @@
 - Filter는 주로 HTTP 요청 및 응답에 대한 전처리 및 후처리 작업을 처리하기 위해 사용하며, 여러 서블릿에서 공통으로 수행해야 할 작업에 적합합니다.
 
 - Interceptor는 Spring Framework와 함께 사용되며, 전역적인 작업이나 공통된 로직을 처리하기 위해 사용되며, Spring의 빈과 통합되어 동작합니다.
+
+</div>
+</details>
+
+<details>
+<summary style="font-size:20px">dispatcher</summary>
+<div markdown="1">
+<br/>
+<h2>🤔 DispatcherServlet 의 역할에 대해 설명해 주세요.</h2>
+
+<h3>📝 나의 대답</h3>
+
+- Dispatcher Servlet은 Http 요청을 Thread에 할당하는 역할을 수행하며 해당 요청의 스펙을 확인해 해석하는 역할을 담당합니다. 
+
+<h3>GPT의 대답</h3>
+
+- DispatcherServlet은 클라이언트로부터 들어오는 HTTP 요청을 받아들이고, 해당 요청을 처리하기 위해 핸들러(컨트롤러)로 매핑해주는 역할을 합니다. 요청이 들어오면 DispatcherServlet은 URL 매핑 정보를 참조하여 적절한 핸들러로 요청을 전달합니다. 핸들러는 일반적으로 컨트롤러(Controller)로서 요청을 처리하고, 결과를 DispatcherServlet에 반환합니다.
+
+- DispatcherServlet은 Spring MVC 웹 애플리케이션에서 중앙 집중식으로 요청을 처리하는 역할을 수행하며, 핸들러 매핑, 핸들러 실행, 뷰 리졸브, 뷰 렌더링 등 다양한 기능을 제공합니다. 이를 통해 웹 애플리케이션의 개발과 유지보수를 효과적으로 할 수 있습니다.
+
+<br/>
+<h2>🤔 여러 요청이 들어온다고 가정할 때, DispatcherServlet은 한번에 여러 요청을 모두 받을 수 있나요.</h2>
+
+<h3>GPT의 대답</h3>
+
+✅ DispatcherServlet은 실질적으로 서블릿 컨테이너가 관리하는 서블릿입니다. 서블릿 컨테이너는 서버에 도착하는 각 요청에 대해 별도의 스레드를 생성합니다. DispatcherServlet이 사용자 요청을 처리하는 동안, 새로운 스레드가 생성되어 추가적인 요청을 처리할 수 있게 됩니다.
+
+- 이로 인해 한 번에 여러 요청을 동시에 받아 처리할 수 있는 멀티스레딩 환경이 구성됩니다. 이런 멀티스레딩 동작 방식은 웹 애플리케이션이 많은 수의 동시 요청을 효과적으로 처리할 수 있게 해줍니다.
+
+- 또한 WAS가 처음 시작될 때, Thread를 Pool에 미리 생성해둬 생성 시간을 줄여 오버헤드를 감소시킬 수 있습니다.
+
+<br/>
+<h2>🤔 수많은 @Controller 를 DispatcherServlet은 어떻게 구분 할까요.</h2>
+
+<h3>📝 나의 대답</h3>
+
+- Thread Local Pattern을 사용해 구분할 수 있습니다. Thread Local은 Thread에게 고유한 상태를 갖게 하는 것이며 이를 통해 구분할 수 있습니다. ❌ 틀렸습니다.
+
+<h3>GPT의 대답</h3>
+
+✅ DispatcherServlet이 여러 @Controller를 구분하는 방법은 주로 요청의 URL, HTTP 메소드 등을 기반으로 합니다. 이는 컨트롤러의 @RequestMapping, @GetMapping, @PostMapping 등의 어노테이션과 함께 동작하여 특정 요청이 어떤 컨트롤러에 의해 처리될 것인지 결정합니다.
+
+- "Thread Local 패턴"은 각 스레드가 자신만의 데이터를 가질 수 있도록 하는 패턴으로, 동시성 문제를 다룰 때 유용합니다. 하지만 이것은 DispatcherServlet이 여러 @Controller를 구분하는 방식과는 직접적으로 관련이 없습니다.
+
 </div>
 </details>
